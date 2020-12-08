@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add View Controller-->
+        <scene sceneID="FuU-3x-ZwI">
+            <objects>
+                <viewController storyboardIdentifier="addViewController" id="gyw-OY-bIJ" customClass="AddViewController" customModule="WeatherTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jbg-NV-oMo">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dtW-Ik-eII">
+                                <rect key="frame" x="16" y="60" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ag7-l4-38H">
+                                <rect key="frame" x="0.0" y="110" width="414" height="736"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="resultTableViewCell" id="EZ6-FQ-qbu" customClass="ResultTableViewCell" customModule="WeatherTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="53.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EZ6-FQ-qbu" id="K8a-8i-UCV">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="53.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7na-Vl-KOf">
+                                                    <rect key="frame" x="16" y="16" width="382" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="7na-Vl-KOf" secondAttribute="bottom" constant="16" id="82o-K1-LPp"/>
+                                                <constraint firstAttribute="trailing" secondItem="7na-Vl-KOf" secondAttribute="trailing" constant="16" id="BA3-H3-nxi"/>
+                                                <constraint firstItem="7na-Vl-KOf" firstAttribute="leading" secondItem="K8a-8i-UCV" secondAttribute="leading" constant="16" id="aGG-2n-kak"/>
+                                                <constraint firstItem="7na-Vl-KOf" firstAttribute="top" secondItem="K8a-8i-UCV" secondAttribute="top" constant="16" id="hNg-iG-Xek"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="label" destination="7na-Vl-KOf" id="Ll4-nw-BMx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ptI-2K-moy"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ag7-l4-38H" firstAttribute="top" secondItem="dtW-Ik-eII" secondAttribute="bottom" constant="16" id="5po-FC-MSA"/>
+                            <constraint firstItem="ptI-2K-moy" firstAttribute="trailing" secondItem="dtW-Ik-eII" secondAttribute="trailing" constant="16" id="EvG-LU-BpQ"/>
+                            <constraint firstItem="dtW-Ik-eII" firstAttribute="leading" secondItem="ptI-2K-moy" secondAttribute="leading" constant="16" id="TOx-Gi-NIF"/>
+                            <constraint firstItem="dtW-Ik-eII" firstAttribute="top" secondItem="ptI-2K-moy" secondAttribute="top" constant="16" id="Tc6-Un-ewv"/>
+                            <constraint firstItem="ptI-2K-moy" firstAttribute="trailing" secondItem="ag7-l4-38H" secondAttribute="trailing" id="erq-aB-M8x"/>
+                            <constraint firstItem="ptI-2K-moy" firstAttribute="bottom" secondItem="ag7-l4-38H" secondAttribute="bottom" constant="16" id="lLk-wX-ycy"/>
+                            <constraint firstItem="ag7-l4-38H" firstAttribute="leading" secondItem="ptI-2K-moy" secondAttribute="leading" id="p30-dx-NIc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="dtW-Ik-eII" id="MDX-ka-i6q"/>
+                        <outlet property="tableView" destination="ag7-l4-38H" id="e8M-oc-CNk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LEe-mc-YlU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-168" y="30"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
